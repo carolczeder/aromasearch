@@ -42,36 +42,36 @@ css = """
 body { background-color: #0a0f1e !important; }
 .gradio-container { background-color: #0a0f1e !important; max-width: 750px !important; margin: auto !important; }
 button.primary { width: 200px !important; margin: 10px auto !important; display: block !important; background: #1a6b8a !important; border: none !important; border-radius: 8px !important; color: white !important; }
-.image-container { border: none !important; background: transparent !important; box-shadow: none !important; }
-.image-container button { display: none !important; }
+.resultado p { color: white !important; font-size: 16px !important; }
+.resultado strong { color: #64d8f0 !important; }
 footer { display: none !important; }
 """
 
 with gr.Blocks(title="AromaSearch", css=css) as app:
-    gr.Image('logo.png', show_label=False, height=180, container=False)
-    gr.Markdown("<center>Encontre seu perfume. Descubra sua essência.</center>")
-    gr.Markdown("---")
+    gr.Markdown("<center><h1 style='color:white'>🔍 AromaSearch</h1></center>")
+    gr.Markdown("<center><p style='color:#a0aec0'>Encontre seu perfume. Descubra sua essência.</p></center>")
+    gr.Markdown("<hr style='border-color:#1a6b8a'>")
 
     with gr.Tab("🔍 Buscar por descrição"):
-        gr.Markdown("Descreva o tipo de perfume que você procura")
+        gr.Markdown("<p style='color:#a0aec0'>Descreva o tipo de perfume que você procura</p>")
         texto = gr.Textbox(
             label="Descrição",
             placeholder="Ex: fresco, amadeirado, para uso diário no trabalho"
         )
         btn1 = gr.Button("Buscar perfumes", variant="primary")
-        resultado1 = gr.Markdown()
+        resultado1 = gr.Markdown(elem_classes=["resultado"])
         btn1.click(buscar_por_descricao, inputs=texto, outputs=resultado1)
 
     with gr.Tab("🎯 Buscar por nome"):
-        gr.Markdown("Digite um perfume que você já gosta e encontre similares")
+        gr.Markdown("<p style='color:#a0aec0'>Digite um perfume que você já gosta e encontre similares</p>")
         nome = gr.Textbox(
             label="Nome do perfume",
             placeholder="Ex: Sauvage"
         )
         btn2 = gr.Button("Buscar similares", variant="primary")
-        resultado2 = gr.Markdown()
+        resultado2 = gr.Markdown(elem_classes=["resultado"])
         btn2.click(buscar_por_nome, inputs=nome, outputs=resultado2)
 
-    gr.Markdown("<center><small>AromaSearch — recomendações sem viés comercial 💙</small></center>")
+    gr.Markdown("<center><p style='color:#a0aec0'><small>AromaSearch — recomendações sem viés comercial 💙</small></p></center>")
 
 app.launch()
