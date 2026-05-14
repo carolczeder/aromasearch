@@ -4,7 +4,7 @@
 
 ## Sobre o projeto
 
-AromaSearch é um sistema de recomendação de perfumes masculinos baseado em busca vetorial semântica. A ideia surgiu de um problema real — sites de perfumaria tendem a recomendar o que é mais lucrativo para eles, não necessariamente o que mais combina com o usuário.
+AromaSearch é um sistema de recomendação de perfumes masculinos baseado em busca vetorial semântica. A ideia surgiu de um problema real, sites de perfumaria tendem a recomendar o que é mais lucrativo para eles, não necessariamente o que mais combina com o usuário.
 
 ## Como funciona
 
@@ -33,7 +33,7 @@ O sistema usa técnicas de NLP e busca vetorial para encontrar perfumes similare
 
 ## Dataset
 
-Dataset do Fragrantica com ~5000 perfumes masculinos, contendo notas de topo, coração e fundo, acordes principais e avaliações.
+Dataset do Fragrantica com 5000 perfumes masculinos, contendo notas de topo, coração e fundo, acordes principais e avaliações.
 
 ## Deploy
 
